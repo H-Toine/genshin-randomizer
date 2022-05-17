@@ -12,14 +12,14 @@ def main():
             excluded_characters.append(key)
 
     if len(excluded_characters) > 0 :
-        print("Excluded characters: " + "\r\n".join(excluded_characters) )
+        print("Excluded characters: \r\n - " + "\r\n - ".join(excluded_characters) )
 
     print(randomize(included_characters,int(input("How many characters? "))))
     input()
 
 def randomize(characters, result_amount):
     result=[]
-    for i in range(result_amount):
+    for i in range(min(len(characters),result_amount)):
         char=random.choice(characters)
         result.append(char)
         characters.remove(char)
